@@ -6,7 +6,7 @@
 
 安装插件后，每过一小时会自动弹出提醒页面，也可以按 `F1`, 然后输入 `ch: ❤召唤陈红鼓励师`来打开提醒页面或者在页面点击鼠标右键，选择 ❤ 召唤陈红鼓励师。
 
-![usage](public/show.jpg)
+![usage](https://ito.oss-cn-beijing.aliyuncs.com/luoxuhai.chenhong/show.jpg?x-oss-process=style/fade)
 
 ## 配置
 
