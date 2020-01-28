@@ -1,0 +1,93 @@
+{
+  "name": "chenhong",
+  "displayName": "陈红鼓励师",
+  "description": "写代码不再孤单，有陈红与你同在。",
+  "version": "0.0.1",
+  "publisher": "luoxuhai",
+  "icon": "public/icons/logo.jpg",
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "陈红",
+    "陈红鼓励师",
+    "鼓励",
+    "提醒"
+  ],
+  "bugs": {
+    "url": "https://github.com/luoxuhai/vscode-chenhong/issues",
+    "email": "2639415619@qq.com"
+  },
+  "homepage": "https://marketplace.visualstudio.com/items?itemName=luoxuhai.chenhong",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luoxuhai/vscode-chenhong.git"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "main": "src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ch.showReminderView",
+        "title": "❤召唤陈红鼓励师",
+        "category": "ch"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "陈红鼓励师",
+      "properties": {
+        "ch.reminderViewIntervalInMinutes": {
+          "type": "number",
+          "default": 60,
+          "description": "展示提醒页面的时间间隔（分钟）"
+        },
+        "ch.title": {
+          "type": "string",
+          "default": "小哥哥，小哥哥，代码写久了，喝杯水吧~",
+          "description": "页面内展示文字"
+        },
+        "ch.type": {
+          "type": "string",
+          "default": "default",
+          "description": "类型：default:默认图；custom：自定义图片"
+        },
+        "ch.customImages": {
+          "type": "array",
+          "default": [
+            "http://b-ssl.duitang.com/uploads/item/201806/04/20180604090459_gqqjo.jpg"
+          ],
+          "description": "自定义图片地址"
+        }
+      }
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "ch.showReminderView",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.32.0",
+    "eslint": "^6.6.0",
+    "glob": "^7.1.5",
+    "mocha": "^6.2.2",
+    "typescript": "^3.6.4",
+    "vscode-test": "^1.2.2"
+  }
+}
