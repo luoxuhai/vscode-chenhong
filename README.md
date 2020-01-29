@@ -32,7 +32,7 @@
 
 ## 如何使用本地图片作为展示图片？
 
-- vscode 不允许读取外部文件路径，所以只能自 ss 己去替换插件内的图片。替换步骤如下：
+- vscode 不允许读取外部文件路径，所以只能自己去替换插件内的图片。替换步骤如下：
 
   1. 找到 vscode 插件安装的地方 (如 mac 在~/.vscode/extensions/luoxuhai.chenhong-{version})
   2. 替换 public/images 内图片

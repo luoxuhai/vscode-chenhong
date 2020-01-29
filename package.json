@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "publisher": "luoxuhai",
   "icon": "public/icons/logo.jpg",
+  "license": "SEE LICENSE IN LICENSE",
   "engines": {
     "vscode": "^1.32.0"
   },
