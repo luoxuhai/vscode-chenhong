@@ -2,7 +2,7 @@
   "name": "chenhong",
   "displayName": "陈红鼓励师",
   "description": "写代码不再孤单，有陈红与你同在。",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "publisher": "luoxuhai",
   "icon": "public/icons/logo.jpg",
   "license": "SEE LICENSE IN LICENSE",
@@ -33,7 +33,7 @@
   "activationEvents": [
     "*"
   ],
-  "main": "src/extension.js",
+  "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
@@ -81,17 +81,21 @@
     }
   },
   "scripts": {
-    "test": "node ./test/runTest.js"
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile",
+    "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.11.7",
-    "@types/vscode": "^1.32.0",
-    "eslint": "^6.6.0",
+    "@types/vscode": "^1.42.0",
     "glob": "^7.1.5",
     "mocha": "^6.2.2",
     "typescript": "^3.6.4",
+    "tslint": "^5.20.0",
     "vscode-test": "^1.2.2"
   }
 }
