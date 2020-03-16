@@ -2,7 +2,7 @@
   "name": "chenhong",
   "displayName": "陈红鼓励师",
   "description": "写代码不再孤单，有陈红与你同在。",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "luoxuhai",
   "icon": "public/icons/logo.jpg",
   "license": "SEE LICENSE IN LICENSE",
@@ -13,9 +13,12 @@
     "Other"
   ],
   "keywords": [
-    "陈红",
-    "陈红鼓励师",
+    "鼓励师",
     "鼓励",
+    "陈红鼓励师",
+    "陈红",
+    "美女",
+    "美人",
     "提醒"
   ],
   "bugs": {
