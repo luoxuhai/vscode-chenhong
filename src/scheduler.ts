@@ -11,17 +11,31 @@ export default class Scheduler {
   }
 
   start() {
-    const config = new Config(this.context);
-
-    vscode.window.onDidChangeWindowState(state => {
-      if (state.focused) {
-        this.interval = setInterval(() => {
-          ReminderView.show(this.context);
-        }, 1000 * 60 * config.getReminderViewIntervalInMinutes());
-      } else {
+    vscode.workspace.onDidChangeConfiguration(e => {
+      if (
+        e.affectsConfiguration('ch.reminderViewIntervalInMinutes') ||
+        e.affectsConfiguration('ch.customImages') ||
+        e.affectsConfiguration('ch.reminderViewIntervalInMinutes')
+      ) {
         ReminderView.hide();
-        clearInterval(this.interval);
+        this.change();
       }
     });
+
+    this.change();
+  }
+
+  change() {
+    const config = new Config(this.context);
+
+    clearInterval(this.interval);
+    this.interval = setInterval(() => {
+      ReminderView.show(this.context);
+    }, 1000 * 60 * config.getReminderViewIntervalInMinutes());
+  }
+
+  dispose() {
+    ReminderView.hide();
+    clearInterval(this.interval);
   }
 }

@@ -22,7 +22,7 @@ export default class Config {
   }
 
   getReminderViewIntervalInMinutes() {
-    return this.getConfiguration().get('reminderViewIntervalInMinutes', 60);
+    return this.getConfiguration().get('reminderViewIntervalInMinutes', 40);
   }
 
   private getDefaultImages() {
